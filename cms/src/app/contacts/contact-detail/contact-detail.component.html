@@ -1,1 +1,39 @@
-<p>contact-detail works!</p>
+<div class="row">
+  <div class="col-xs-12 rounded-border">
+    <!-- shaded row -->
+    <div class="row shaded">
+      <div class="col-xs-12">
+        <h3>{{ contact.name }}</h3>
+        <!-- row with picture and buttons -->
+        <div class="row padding">
+          <!-- picture -->
+          <div class="col-xs-6">
+            <img [src]="contact.imageUrl" [alt]="contact.name">
+          </div>
+          <!-- buttons -->
+          <div class="col-xs-6">
+            <div class="row">
+              <div class="col-xs-6 text-right">
+                <button class="btn btn-primary">Edit</button>
+              </div>
+              <div class="col-xs-6 text-left">
+                <button class="btn btn-danger">Delete</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- row with contact info -->
+    <div class="row padding">
+      <div class="col-xs-12">
+        <p>Email: {{ contact.email }}</p>
+        <p>Phone: {{ contact.phone }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+

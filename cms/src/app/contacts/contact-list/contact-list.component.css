@@ -1,3 +1,16 @@
 .shaded {
   background-color: rgb(224, 224, 224);
 }
+
+.rounded-border {
+  border: solid 4px rgb(224, 224, 224);
+  border-radius: 5px;
+}
+
+.middle {
+    margin-top: 10px;
+}
+
+.padding {
+  padding: 20px;
+}
