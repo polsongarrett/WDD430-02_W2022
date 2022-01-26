@@ -9,9 +9,10 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-xs-12">
-            <cms-message-item
-            *ngFor="let messageElement of messages"
-          ></cms-message-item>
+            <cms-message-item 
+              *ngFor="let messageElement of messages" 
+              [message]="messageElement">
+            </cms-message-item>
           </div>
         </div>
       </div>
