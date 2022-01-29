@@ -2,6 +2,7 @@
   <div class="col-md-6 bottom">
     <cms-contact-list (selectedContactEvent)="selectedContact = $event"></cms-contact-list>
   </div>
+  
   <div class="col-md-offset-7">
     <cms-contact-detail *ngIf="selectedContact" [contact]="selectedContact"></cms-contact-detail>
   </div>
