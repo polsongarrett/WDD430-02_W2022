@@ -1,29 +1,25 @@
+import { DocumentService } from './../../document.service';
 import { Document } from './../../document.model';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'cms-document-list',
   templateUrl: './document-list.component.html',
-  styleUrls: ['./document-list.component.css']
+  styleUrls: ['./document-list.component.css'],
+  providers: []
 })
 export class DocumentListComponent implements OnInit {
 
-  documents: Array<Document> = [
-    new Document(Math.random() * 1001, "file00.txt", "A text file", "../../assets/documents/file00.txt"),
-    new Document(Math.random() * 1001, "file01.txt", "A text file", "../../assets/documents/file01.txt"),
-    new Document(Math.random() * 1001, "file02.txt", "A text file", "../../assets/documents/file02.txt"),
-    new Document(Math.random() * 1001, "file03.txt", "A text file", "../../assets/documents/file03.txt"),
-    new Document(Math.random() * 1001, "file04.txt", "A text file", "../../assets/documents/file04.txt")
-  ];
+  documents: Array<Document> = [];
 
-  @Output() selectedDocumentEvent = new EventEmitter<Document>();
+  constructor(private documentService: DocumentService) { }
 
-  constructor() { }
-
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.documents = this.documentService.getDocuments();
+   }
 
   onSelectedDocument(document: Document) {
-    this.selectedDocumentEvent.emit(document);
+    this.documentService.documentSelectedEvent.emit(document);
   }
 
 }
