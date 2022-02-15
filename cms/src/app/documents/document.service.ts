@@ -8,8 +8,9 @@ import { Document } from './document.model';
 })
 export class DocumentService {
 
-  documents: Array<Document>  = [];
+  documents: Array<Document> = [];
   documentSelectedEvent = new EventEmitter<Document>();
+  documentChangedEvent = new EventEmitter<Document[]>();
 
   constructor() { 
     this.documents = MOCKDOCUMENTS;
@@ -22,5 +23,19 @@ export class DocumentService {
   getDocument(id: string): Document {
     let document = this.documents.find(element => element.id == id);
     return document;
+  }
+
+  deleteDocument(document: Document): void {
+    if (!document) {
+      return;
+    }
+
+    const position = this.documents.indexOf(document);
+    if (position < 0) {
+      return;
+    }
+
+    this.documents.splice(position, 1);
+    this.documentChangedEvent.emit(this.documents.slice());
   }
 }
