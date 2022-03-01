@@ -1,6 +1,8 @@
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
@@ -14,7 +16,6 @@ import { DocumentDetailComponent } from './documents/document-detail/document-de
 import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
 import { DocumentItemComponent } from './documents/document-item/document-item/document-item.component';
 import { DocumentListComponent } from './documents/document-list/document-list/document-list.component';
-import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header.component';
 import { MessageItemComponent } from './messages/message-item/message-item.component';
 import { MessageEditComponent } from './messages/message-edit/message-edit.component';
@@ -43,6 +44,7 @@ import { MessageListComponent } from './messages/message-list/message-list.compo
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

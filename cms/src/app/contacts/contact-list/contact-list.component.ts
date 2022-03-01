@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class ContactListComponent implements OnInit, OnDestroy {
 
-  contacts: Array<Contact> = [];
+  public contacts: Array<Contact> = [];
   subscription: Subscription;
 
   constructor(private contactService: ContactService) { }
