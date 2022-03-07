@@ -1,13 +1,15 @@
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
+import { ContactsFilterPipe } from './contacts/contacts-filter.pipe';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
 import { ContactItemComponent } from './contacts/contact-item/contact-item.component';
 import { DropdownDirective } from './shared/dropdown.directive';
@@ -28,6 +30,7 @@ import { MessageListComponent } from './messages/message-list/message-list.compo
     ContactListComponent,
     ContactDetailComponent,
     ContactEditComponent,
+    ContactsFilterPipe,
     ContactItemComponent,
     DropdownDirective,
     DocumentsComponent,
@@ -41,10 +44,11 @@ import { MessageListComponent } from './messages/message-list/message-list.compo
     MessageListComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
+    DragDropModule,
     FormsModule,
-    DragDropModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
