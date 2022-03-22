@@ -26,8 +26,6 @@ export class MessageEditComponent implements OnInit {
     const subject = this.subjectRef.nativeElement.value;
     const message = this.messageRef.nativeElement.value;
     const newMessage = new Message((Math.random() * 100000000000001).toString(), subject, message, this.currentSender);
-    // this.addMessageEvent.emit(newMessage);
-    console.log("newMessage:", newMessage);
     this.messageService.addMessage(newMessage);
   }
 
