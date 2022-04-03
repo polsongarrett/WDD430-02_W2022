@@ -1,0 +1,11 @@
+<mat-accordion multi="true" *ngIf="entries.length > 0">
+  <mat-expansion-panel *ngFor="let entry of entries">
+    <mat-expansion-panel-header>{{ entry.date }}</mat-expansion-panel-header>
+    {{ entry.text }}
+    <mat-action-row>
+      <button mat-raised-button color="accent">Edit</button>
+      <button mat-raised-button color="warn">Delete</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="mat-body no-entries" *ngIf="entries.length <= 0">No journal entries added</p>

@@ -1,0 +1,9 @@
+<mat-card>
+  <form (submit)="onAddEntry(entryForm)" #entryForm="ngForm">
+    <mat-form-field appearance='fill'>
+      <mat-label>Record your thoughts...</mat-label>
+      <textarea matInput rows="10" ngModel name="content" required></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="entryForm.invalid">Save Journal Entry</button>
+  </form>
+</mat-card>
