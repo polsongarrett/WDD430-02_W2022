@@ -23,6 +23,10 @@ export class EntryListComponent implements OnInit, OnDestroy {
       });
   }
 
+  onDelete(entryId: string) {
+    this.entriesService.deleteEntry(entryId);
+  }
+
   ngOnDestroy(): void {
     this.entriesSubscription.unsubscribe();
   }
