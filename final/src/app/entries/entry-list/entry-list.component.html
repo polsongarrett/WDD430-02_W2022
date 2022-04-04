@@ -3,7 +3,7 @@
     <mat-expansion-panel-header>{{ entry.date }}</mat-expansion-panel-header>
     {{ entry.text }}
     <mat-action-row>
-      <button mat-raised-button color="accent">Edit</button>
+      <a [routerLink]="['/edit', entry.id]" mat-raised-button color="accent">Edit</a>
       <button mat-raised-button color="warn" (click)="onDelete(entry.id)">Delete</button>
     </mat-action-row>
   </mat-expansion-panel>

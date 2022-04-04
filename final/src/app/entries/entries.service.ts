@@ -33,6 +33,10 @@ export class EntriesService {
       });
   }
 
+  getEntry(id: string) {
+    return { ...this.entries.find(entry => entry.id == id) };
+  }
+
   getEntryUpdatedListener() {
     return this.entriesUpdated.asObservable();
   }
@@ -44,6 +48,14 @@ export class EntriesService {
         entry.id = responseData.entryId;
         this.entries.push(entry);
         this.entriesUpdated.next([...this.entries]);
+      });
+  }
+
+  updateEntry(id: string, date: string, text: string) {
+    const entry: Entry = { id: id, date: date, text: text };
+    this.http.put('http://localhost:3000/api/entries/' + id, entry)
+      .subscribe(response => {
+        console.log('update response:', response);
       });
   }
 
